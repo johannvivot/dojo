@@ -1,0 +1,49 @@
+Tech Talks Dojo #3 Javascript Cookies Exercícios
+
+Objetivo
+
+Estudar gerenciamento de Cookies em Javascript
+
+
+Exercícios
+
+1. Crie a classe CookieManager para gerenciar cookies. A classe deve ter a seguinte assinatura:
+function CookieManager(){
+
+}
+
+CookieManager.prototype.set = function(cookie_name, valor, dominio,path, expiration){
+    // Função que cria ou atualiza cookies
+    // @param cookie_name - Nome do cookie que será criado
+    // @param valor - Valor do cookie
+    // @param dominio (opt)- domínio onde deve ser gravado o cookie
+    // @param path (opt)- Path onde deve ser gravado o cookie
+    // @param expiration (opt)- expiração do cookie
+    
+    // Implement me!
+    
+};
+    
+CookieManager.prototype.get = function(cookie_name){
+    // Função que retorna o valor de um cookie
+    
+    // Implement me!
+};
+    
+CookieManager.prototype.delete = function(cookie_name){
+    // Função que deleta um cookie
+    
+    // Implement me!
+};
+
+cm = new CookieManager();
+c.set('cookie', 'valor');
+
+
+2. Faça uma função em javascript que retorne o tamanho máximo de um Cookie e o número máximo de cookies que o browser permite.
+
+
+3. Crie um iframe numa página com o conteúdo de outra página que esteja dentro de outro domínio. Você deverá então cumprir as seguintes tarefas:
+	- Escrever um cookie no domínio de dentro do iframe a partir de um script dentro da página hospedada no domínio do iframe;
+	- Escrever um cookie no domínio de dentro do iframe a partir de um script dentro da página hospedada no domínio da página pai;
+	- Ler um cookie que esteja no domínio de dentro do iframe a partir de um script que esteja na página pai e mostrar seu conteúdo com um alert()
