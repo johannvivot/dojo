@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Twitter Fetcher</title>
+		<script type="text/javascript" src="jquery-1.5.1.min.js"></script> 
+		<script type="text/javascript" src="jquery.twitter-fetcher.js"></script>
+		<script type="text/javascript" src="custom.js"></script>
+		<script type="text/javascript">
+			$(document).ready(
+				function() {
+					tf = new TwitterFetcher(15);
+					$('#btn-search').click(function() {
+						$('#twitts').empty();
+						tf.fetch($('#term').val())
+							.success(function() {
+                                $('#loader').html('<p>Exibindo <i>'+ tf.rpp +'</i> resultados para o termo "<i>'+ tf.term +'</i>".</p>');
+								tf.toTable('twitts');
+							})
+                            .error(function(){
+                                alert('erro!');
+                                jQuery('#loader').html('<h2>Error: Bad Request</h2>');	
+                            });
+					});
+				}
+			);
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Twitter Fetcher</h1>
+			<form>
+				<table>
+					<tr>
+						<td><input type="text" id="term" value="" /></td>
+						<td><input type="button" id="btn-search" value="Buscar" /></td>
+					</tr>
+				</table>
+			</form>
+			<div id="loader"></div>
+			<div id="result">
+				<table id="twitts"></table>
+			</div>	
+		</div>
+	</body>
+</html>
