@@ -1,0 +1,53 @@
+Tech Talks Dojo #2 Javascript Básico Exercícios
+
+
+Objetivo
+
+Estudar Closures e Function Cache
+
+Exercícios
+
+1. A seguinte função deve imprimir no console os valores de i, que vão de 0 a 3. Porém ela não funciona. Ela imprime apenas o valor 4, 4 vezes.Porque isso ocorre e como corrigir isso?
+
+function log_delayed(){
+    var count = 0; 
+    for ( var i = 0; i < 4; i++ ) { 
+      setTimeout(function(){ 
+        console.log(i); 
+      }, i * 500); 
+    }
+}
+
+
+
+2. Implemente o método aniversário da classe Performer e faça com que ele permita o encadeamento de funções no objeto.
+function Performer(idade){ 
+  this.idade = idade; 
+} 
+
+Performer.prototype.aniversario = function(){
+    //Implement me!
+}
+
+var eduardo = new Performer(25); 
+var bitteti = new Performer(26); 
+ 
+console.log(eduardo.aniversario().idade == 26);
+console.log(bitteti.aniversario().idade == 27);
+
+
+
+3. Veja o código abaixo. Porque a variável "clicked" existe dentro do contexto do elem e não dentro do contexto do Button? Como poderíamos resolver este problema da forma mais portável possível para que essa variável fosse criada no contexto do Button?
+var Button = { 
+  click: function(){ 
+    this.clicked = true; 
+  } 
+}; 
+ 
+var elem = {};
+elem.onclick = Button.click; 
+ 
+elem.onclick(); 
+console.log( Button.clicked, "Button.clicked é undefined" );
+console.log( elem.clicked, "elem.clicked é true" );
+
