@@ -1,0 +1,48 @@
+Tech Talks Dojo #1 Javascript Básico - Twitter Fetcher
+
+Objetivo
+
+Escrever uma classe em Javascript que possa buscar tweets na internet e faça output em um Array JS ou em uma tabela HTML.
+
+
+Implementação
+
+class TwitterFetcher();
+	method: fetch(query);
+	Este método deve fazer o fetch dos 10 últimos resultados do Twitter e armazena numa variável interna.
+	De preferência deveremos usar o jQuery para fazer o download e parsear a página de resultados.
+
+	method: toArray();
+	Este método retorna um Array com os 10 últimos tweets que foram baixados.
+
+	method: toTable(table_id);
+	Este método deve inserir os tweets como linhas na tabela de id table_id.
+
+
+Exemplo de uso
+
+HMTL inicial:
+
+<table id="table_id">
+</table>
+
+Javascript:
+
+> tf = new TwitterFetcher();
+> tf.fetch('Coca-Cola');
+> tf.toArray();
+["pitchforkmedia: Daft Punk get their own Coca-Cola bottles. Daft Coke!http://bit.ly/ex0mQ7", "Nadya_HutaGalng: --> eew.. Coca-cola and Pepsi ingredient is cancer risk: Call to ban colouring agent | Mail Online: http://bit.ly/dI9zs0", ...]
+> tf.toTable('table_id');
+
+HMTL final:
+
+<table id="table_id">
+<tr><td>
+pitchforkmedia: Daft Punk get their own Coca-Cola bottles. Daft Coke!http://bit.ly/ex0mQ7
+</tr></td>
+<tr><td>
+Nadya_HutaGalng: --> eew.. Coca-cola and Pepsi ingredient is cancer risk: Call to ban colouring agent | Mail Online: http://bit.ly/dI9zs0
+</tr></td>
+(...)
+</table>
+
